@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="384.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="384.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.sci.cs.calendar.CalendarController">
    <top>
       <Label text="Calendar App" BorderPane.alignment="CENTER">
          <font>
@@ -27,7 +27,7 @@
             <TextArea fx:id="eventArea" layoutX="87.0" layoutY="130.0" prefHeight="56.0" prefWidth="203.0" promptText="Event" />
             <Label layoutX="14.0" layoutY="25.0" text="Date: " />
             <DatePicker fx:id="datePicker" editable="false" layoutX="87.0" layoutY="21.0" prefHeight="25.0" prefWidth="142.0" promptText="Date/Month/Year" showWeekNumbers="true" />
-            <Button fx:id="saveBtn" layoutX="82.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="Save" />
+            <Button fx:id="addEventBtn" layoutX="69.0" layoutY="273.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="25.0" prefWidth="76.0" text="Add Event" />
             <Label layoutX="14.0" layoutY="61.0" text="Start Time: " />
             <Spinner fx:id="startHourSpinner" layoutX="87.0" layoutY="57.0" prefHeight="25.0" prefWidth="57.0">
                	<valueFactory>
@@ -82,7 +82,7 @@
             <Label layoutX="14.0" layoutY="97.0" text="End Time: " />
             <TextArea fx:id="placeArea" layoutX="87.0" layoutY="198.0" prefHeight="58.0" prefWidth="203.0" promptText="Place" />
             <Label layoutX="15.0" layoutY="219.0" prefHeight="17.0" prefWidth="38.0" text="Place: " />
-            <Button fx:id="cancelBtn" layoutX="168.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="Cancel" />
+            <Button fx:id="cancelBtn" layoutX="170.0" layoutY="273.0" mnemonicParsing="false" onAction="#clearInput" prefHeight="25.0" prefWidth="76.0" text="Cancel" />
          </children>
       </AnchorPane>
    </left>
@@ -96,7 +96,7 @@
    <bottom>
       <AnchorPane prefHeight="40.0" prefWidth="675.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="582.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Exit" />
+            <Button fx:id="exitBtn" layoutX="582.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="79.0" text="Exit" />
          </children>
       </AnchorPane>
    </bottom>
